@@ -1,0 +1,136 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/curved_rectangle_with_two_side">
+
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/pan_card_bottomsheet"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/_20DP"
+            android:layout_marginTop="@dimen/_20DP"
+            android:layout_marginEnd="@dimen/_20DP"
+            android:background="@color/faff"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/enter_driving_licence"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/_30DP"
+                android:layout_marginTop="@dimen/_35DP"
+                android:text="@string/enter_driving_number"
+                android:textColor="@color/light_blue"
+                android:textSize="@dimen/_14SP"
+                app:fontFamily="@font/roboto_medium"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:textAllCaps="true" />
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/dl_input"
+                style="@style/TextInputLayoutStyle"
+                android:layout_marginStart="@dimen/_30DP"
+                android:layout_marginTop="@dimen/_10DP"
+                android:layout_marginEnd="@dimen/_30DP"
+                app:errorEnabled="false"
+                app:boxStrokeWidth="@dimen/_1DP"
+                app:boxStrokeWidthFocused="@dimen/_1DP"
+                android:theme="@style/TextInputStyle"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/enter_driving_licence">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/driving_licence_ed"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@color/transparent"
+                    android:digits="ABCDEFGHIJKLMNOPQRSTUVWXYZ1234567890"
+                    android:hint="@string/enter_licence_edittext"
+                    android:inputType="textCapCharacters"
+                    android:maxLines="1"
+                    android:maxLength="16"
+                    android:textColorHint="@color/grey_b1"
+                    android:paddingTop="@dimen/_0DP"
+                    android:paddingBottom="@dimen/_3DP"
+                    android:paddingStart="0dp"
+                    android:textColor="@color/Black_grey" />
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/enter_expiry_date"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_35DP"
+                android:text="@string/enter_expiry_date"
+                android:textColor="@color/light_blue"
+                android:textSize="@dimen/_14SP"
+                app:fontFamily="@font/roboto_medium"
+                app:layout_constraintStart_toStartOf="@id/enter_driving_licence"
+                app:layout_constraintTop_toBottomOf="@id/dl_input"
+                app:textAllCaps="true" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/driving_licence_date_ed"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/_30DP"
+                android:layout_marginTop="@dimen/_10DP"
+                android:layout_marginEnd="@dimen/_30DP"
+                android:layout_marginBottom="@dimen/_35DP"
+                android:backgroundTint="@color/light_grey_d9"
+                android:drawableEnd="@drawable/baseline_calendar_month_24"
+                android:hint="@string/expiry_date"
+                android:maxLines="1"
+                android:textColorHint="@color/grey_b1"
+                android:paddingTop="@dimen/_0DP"
+                android:paddingEnd="@dimen/_10DP"
+                android:paddingBottom="@dimen/_10DP"
+                android:textColor="@color/Black_grey"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/enter_expiry_date" />
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/_1DP"
+                android:layout_marginStart="@dimen/_30DP"
+                android:layout_marginEnd="@dimen/_30DP"
+                android:background="@color/light_grey_d9"
+                app:layout_constraintTop_toBottomOf="@+id/driving_licence_date_ed">
+
+            </View>
+
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/continue_AppCompatButton"
+            style="@style/custombutton"
+            android:layout_marginStart="@dimen/_30DP"
+            android:layout_marginTop="@dimen/_44DP"
+            android:layout_marginEnd="@dimen/_30DP"
+            android:layout_marginBottom="@dimen/_20DP"
+            android:background="@drawable/disable_button"
+            android:enabled="false"
+            android:textColor="@color/grey_A3"
+            android:text="@string/_continue"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/pan_card_bottomsheet" />
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "738680413045",
+    "project_id": "ecom-one-76b0c",
+    "storage_bucket": "ecom-one-76b0c.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:738680413045:android:41f2893fed32ea19c1113c",
+        "android_client_info": {
+          "package_name": "com.ecomexpress.oneBoarding"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "738680413045-d55mp8iabrtu5j8icb5pmafl1fqaoktp.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.ecomexpress.oneBoarding",
+            "certificate_hash": "f739bb58947b552755143377eac44cae3f1927be"
+          }
+        },
+        {
+          "client_id": "738680413045-ip2t2lsb7tk61235d1affgrfarfmt76m.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAZxnTFlNePEmVKZ1MQvHRM-qoCwhuLa98"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "738680413045-ip2t2lsb7tk61235d1affgrfarfmt76m.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

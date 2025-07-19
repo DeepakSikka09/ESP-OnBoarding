@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/curved_rectangle_with_two_side">
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/gallery_AppCompatImageView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="44dp"
+            android:layout_marginTop="@dimen/_25DP"
+            android:layout_marginEnd="@dimen/_266DP"
+            android:background="@drawable/ic_round"
+            android:padding="@dimen/_10DP"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:srcCompat="@drawable/ic_gallery" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            style="@style/subheading"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/_26DP"
+            android:layout_marginTop="@dimen/_12DP"
+            android:layout_marginBottom="@dimen/_21DP"
+            android:gravity="center"
+            android:text="@string/uplaod_from_gallery"
+            android:textSize="@dimen/_15SP"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/gallery_AppCompatImageView">
+
+        </androidx.appcompat.widget.AppCompatTextView>
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/camera_click"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="166dp"
+            android:layout_marginTop="@dimen/_25DP"
+            android:background="@drawable/ic_round"
+            android:padding="@dimen/_10DP"
+            android:src="@drawable/ic_camera_options"
+            app:layout_constraintStart_toEndOf="@id/gallery_AppCompatImageView"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            style="@style/subheading"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="166dp"
+            android:layout_marginTop="@dimen/_12DP"
+            android:layout_marginBottom="@dimen/_37DP"
+            android:gravity="center"
+            android:text="@string/camera"
+            android:textColor="@color/light_blue"
+            android:textSize="@dimen/_15SP"
+            app:fontFamily="@font/roboto_medium"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/gallery_AppCompatImageView">
+
+        </androidx.appcompat.widget.AppCompatTextView>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

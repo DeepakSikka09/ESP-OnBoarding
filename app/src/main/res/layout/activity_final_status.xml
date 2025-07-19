@@ -1,0 +1,153 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+        <variable
+            name="finalStatusViewModel"
+            type="com.ecomexpress.oneBoarding.ui.onBoard.viewmodel.FinalStatusViewModel" />
+    </data>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:fillViewport="true">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <androidx.constraintlayout.widget.Guideline
+                android:id="@+id/guideline"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/_1DP"
+                android:orientation="horizontal"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintGuide_percent=".58"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/_0DP"
+                android:background="@drawable/ic_curve_rectangle"
+                app:layout_constraintBottom_toTopOf="@+id/guideline"
+                app:layout_constraintTop_toTopOf="parent">
+
+                <androidx.appcompat.widget.AppCompatImageView
+                    android:id="@+id/ecom_express"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/_24DP"
+                    android:layout_marginTop="@dimen/_20DP"
+                    android:src="@drawable/ic_ecom_logo"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <androidx.appcompat.widget.AppCompatImageView
+                    android:id="@+id/help_image"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/_20DP"
+                    android:layout_marginEnd="@dimen/_10DP"
+                    android:padding="@dimen/_5DP"
+                    android:src="@drawable/ic_help"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/fe_name"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/_24DP"
+                    android:layout_marginTop="@dimen/_23DP"
+                    android:textColor="@color/blue"
+                    android:textSize="@dimen/_18SP"
+                    app:fontFamily="@font/roboto_bold"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/ecom_express" />
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/fe_id"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/_24DP"
+                    android:layout_marginTop="8dp"
+                    android:textColor="@color/black_5B"
+                    android:textSize="@dimen/_18SP"
+                    app:fontFamily="@font/roboto_bold"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/fe_name" />
+
+                <include
+                    android:id="@+id/common_bg"
+                    layout="@layout/include_process"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/_0DP"
+                    android:layout_marginTop="@dimen/_20DP"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/fe_id" />
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <include
+                android:id="@+id/address_subLayout"
+                layout="@layout/include_visit_onboarding_location"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_10DP"
+                android:visibility="visible"
+                app:layout_constraintTop_toBottomOf="@+id/guideline" />
+
+            <include
+                android:id="@+id/hr_pending"
+                layout="@layout/include_dc_status"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_20DP"
+                android:visibility="gone"
+                app:layout_constraintTop_toBottomOf="@+id/guideline" />
+
+            <include
+                android:id="@+id/final_verification"
+                layout="@layout/finalscreen_verification_done"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_20DP"
+                android:visibility="gone"
+                app:layout_constraintTop_toBottomOf="@+id/guideline" />
+
+            <include
+                android:id="@+id/final_rejected"
+                layout="@layout/final_last_rejected"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_20DP"
+                android:visibility="gone"
+                app:layout_constraintTop_toBottomOf="@+id/guideline" />
+
+            <include
+                android:id="@+id/dc_onhold"
+                layout="@layout/include_onbarding_onhold"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/_0DP"
+                android:layout_marginTop="@dimen/_20DP"
+                android:visibility="gone"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/guideline" />
+
+            <include
+                android:id="@+id/terms_condition"
+                layout="@layout/include_terms_conditions"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/_0DP"
+                android:layout_marginTop="@dimen/_20DP"
+                android:visibility="gone"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/guideline" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </ScrollView>
+</layout>

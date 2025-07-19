@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="@dimen/_0DP"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/_15DP"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/cornerBorder"
+                android:layout_width="@dimen/_15DP"
+                android:layout_height="0dp"
+                android:src="@drawable/alert_dialog_corner"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="@dimen/_0DP"
+                android:layout_height="wrap_content"
+                android:paddingTop="@dimen/_10DP"
+                android:backgroundTint="@color/pink_ED"
+                android:background="@drawable/image_not_valid_dialog"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@id/cornerBorder"
+                app:layout_constraintTop_toTopOf="parent">
+
+                <androidx.appcompat.widget.AppCompatImageView
+                    android:id="@+id/imv_info"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/_30DP"
+                    android:src="@drawable/ic_info_red"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintBottom_toBottomOf="@+id/image_not_valid"
+                    app:layout_constraintTop_toTopOf="@+id/image_not_valid" />
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/image_not_valid"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/roboto_bold"
+                    android:text="@string/image_not_valid"
+                    android:textColor="@color/black_b1"
+                    android:textSize="@dimen/_20SP"
+                    android:layout_marginStart="@dimen/_10DP"
+                    android:textStyle="bold"
+                    app:layout_constraintStart_toEndOf="@+id/imv_info"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <androidx.appcompat.widget.AppCompatImageView
+                    android:id="@+id/imv_close"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="@dimen/_20DP"
+                    android:padding="@dimen/_10DP"
+                    android:src="@drawable/ic_close"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/tv_uplaodvalid"
+                    android:layout_width="@dimen/_0DP"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/_30DP"
+                    android:fontFamily="@font/roboto_regular"
+                    android:gravity="center|start"
+                    android:text="@string/please_uplaod_a_valid_image_of_aadhar_card"
+                    android:textColor="@color/black_b1"
+                    android:textSize="@dimen/_16SP"
+                    android:textStyle="bold"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="@+id/imv_info"
+                    app:layout_constraintTop_toBottomOf="@+id/image_not_valid" />
+
+                <androidx.appcompat.widget.AppCompatButton
+                    android:id="@+id/btn_exit"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/_30DP"
+                    android:layout_marginTop="@dimen/_25DP"
+                    android:layout_marginBottom="@dimen/_30DP"
+                    android:background="@drawable/btnshape"
+                    android:backgroundTint="@color/grey_version"
+                    android:fontFamily="@font/roboto_regular"
+                    android:text="@string/exit"
+                    android:textColor="@color/light_blue"
+                    android:textSize="@dimen/_20SP"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/tv_uplaodvalid" />
+            </androidx.constraintlayout.widget.ConstraintLayout>
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

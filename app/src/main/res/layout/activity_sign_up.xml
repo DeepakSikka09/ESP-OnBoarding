@@ -1,0 +1,192 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="signup"
+            type="com.ecomexpress.oneBoarding.ui.onBoard.viewmodel.SignUpViewModel" />
+
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".ui.onBoard.activity.SignUpActivity">
+
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@color/light_grey_ec">
+
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/ic_back_arrow"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_25DP"
+                android:layout_marginStart="@dimen/_20DP"
+                android:padding="@dimen/_10DP"
+                android:src="@drawable/ic_back_arrow"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/iv_profile_icon"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/_10DP"
+                android:layout_marginBottom="@dimen/_35DP"
+                android:src="@drawable/profile_icon"
+                app:layout_constraintStart_toStartOf="@+id/ic_back_arrow"
+                app:layout_constraintBottom_toTopOf="@id/signup_page_icon"/>
+
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/tv_sign_up"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/_10DP"
+                android:fontFamily="@font/roboto_medium"
+                android:padding="@dimen/_5DP"
+                android:text="@string/sign_up"
+                android:textSize="@dimen/_24SP"
+                app:layout_constraintBottom_toBottomOf="@+id/iv_profile_icon"
+                app:layout_constraintStart_toEndOf="@+id/iv_profile_icon"
+                app:layout_constraintTop_toTopOf="@+id/iv_profile_icon" />
+
+
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/signup_page_icon"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/_17DP"
+                android:src="@drawable/signup_page_icon"
+                app:layout_constraintBottom_toTopOf="@id/tv_send_statement"/>
+
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/tv_send_statement"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="@dimen/_17DP"
+                android:fontFamily="@font/roboto_medium"
+                android:maxLines="2"
+                android:text="@string/send_otp_statement"
+                android:textColor="@color/lighter_grey"
+                android:textSize="@dimen/_16SP"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintBottom_toTopOf="@id/guideline1"/>
+
+            <androidx.constraintlayout.widget.Guideline
+                android:id="@+id/guideline1"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                app:layout_constraintGuide_percent=".55" />
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/iv_country_flag"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/_17DP"
+                android:layout_marginTop="@dimen/_35DP"
+                android:src="@drawable/india_logo"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/guideline1" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/et_country_code"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/_7DP"
+                android:backgroundTint="@color/light_grey_d9"
+                android:enabled="false"
+                android:fontFamily="@font/roboto_medium"
+                android:inputType="number"
+                android:text="@string/_91"
+                android:textColor="@color/black_4C"
+                android:textSize="@dimen/_20SP"
+                app:layout_constraintStart_toEndOf="@+id/iv_country_flag"
+                app:layout_constraintTop_toTopOf="@+id/iv_country_flag"
+                app:layout_constraintBottom_toBottomOf="@id/enter_moblieNumber"
+                />
+
+            <androidx.appcompat.widget.AppCompatEditText
+                android:id="@+id/enter_moblieNumber"
+                android:layout_width="@dimen/_0DP"
+                android:layout_height="wrap_content"
+                android:backgroundTint="@color/light_grey_d9"
+                android:fontFamily="@font/roboto_medium"
+                android:gravity="center|start"
+                android:inputType="number"
+                android:maxLength="10"
+                android:layout_marginStart="@dimen/_2DP"
+                android:background="@color/transparent"
+                android:textColor="@color/black_4C"
+                android:textSize="@dimen/_20SP"
+                android:layout_marginEnd="@dimen/_15DP"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@id/et_country_code"
+                app:layout_constraintTop_toTopOf="@+id/iv_country_flag" />
+            <View
+                android:id="@+id/divider"
+                android:layout_width="@dimen/_0DP"
+                android:layout_height="@dimen/_1DP"
+                app:layout_constraintTop_toBottomOf="@id/enter_moblieNumber"
+                android:background="@color/grey_BC"
+                android:layout_marginTop="@dimen/_5DP"
+                app:layout_constraintStart_toStartOf="@id/iv_country_flag"
+                app:layout_constraintEnd_toEndOf="@id/enter_moblieNumber"/>
+
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/otp_btn"
+                style="@style/custombutton"
+                android:layout_marginHorizontal="@dimen/_25DP"
+                android:layout_marginTop="@dimen/_50DP"
+                android:background="@drawable/disable_button"
+                android:enabled="false"
+                android:text="@string/send_otp_"
+                android:textColor="@color/grey_A3"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/divider" />
+
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/_25DP"
+                android:fontFamily="@font/roboto_regular"
+                android:text="Already register ? LOGIN"
+                android:textColor="@color/lighter_grey"
+                android:textSize="@dimen/_16SP"
+                android:visibility="gone"
+                app:layout_constraintStart_toStartOf="@+id/otp_btn"
+                app:layout_constraintTop_toBottomOf="@id/otp_btn" />
+
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/tv_version"
+                style="@style/textView"
+                android:layout_width="wrap_content"
+                android:layout_height="@dimen/_0DP"
+                android:textColor="@color/grey_7F"
+                android:textSize="@dimen/_12SP"
+                android:gravity="bottom"
+                app:layout_constraintTop_toBottomOf="@id/otp_btn"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

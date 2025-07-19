@@ -1,0 +1,193 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/address_subLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/visit_onboarding_location"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/_31DP"
+            android:gravity="start"
+            android:text="@string/please_visit_at_onboarding_center"
+            app:fontFamily="@font/roboto_bold"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/with_the_original_aadhar"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/_31DP"
+            android:layout_marginTop="@dimen/_10DP"
+            android:text="@string/_original_copies"
+            android:textColor="@color/dark_orange"
+            app:fontFamily="@font/roboto_medium"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/visit_onboarding_location" />
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/addhar_image"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/_17DP"
+            android:src="@drawable/ic_aadhar_final"
+            app:layout_constraintStart_toStartOf="@id/with_the_original_aadhar"
+            app:layout_constraintTop_toBottomOf="@id/with_the_original_aadhar" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/aadhar_card_text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/_20DP"
+            android:fontFamily="@font/roboto_medium"
+            android:text="@string/aadhar_card"
+            android:textColor="@color/dark_orange"
+            android:textSize="@dimen/_15SP"
+            app:layout_constraintBottom_toBottomOf="@id/addhar_image"
+            app:layout_constraintStart_toEndOf="@id/addhar_image"
+            app:layout_constraintTop_toTopOf="@id/addhar_image" />
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/pan_image"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/_15DP"
+            android:src="@drawable/ic_panicon"
+            app:layout_constraintStart_toStartOf="@id/with_the_original_aadhar"
+            app:layout_constraintTop_toBottomOf="@id/addhar_image" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/pan_text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/_20DP"
+            android:fontFamily="@font/roboto_medium"
+            android:text="@string/_pan_card"
+            android:textColor="@color/dark_orange"
+            android:textSize="@dimen/_15SP"
+            app:layout_constraintBottom_toBottomOf="@id/pan_image"
+            app:layout_constraintStart_toEndOf="@id/pan_image"
+            app:layout_constraintTop_toTopOf="@id/pan_image" />
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/bank_image"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/_15DP"
+            android:src="@drawable/ic_final_bank"
+            app:layout_constraintStart_toStartOf="@id/with_the_original_aadhar"
+            app:layout_constraintTop_toBottomOf="@id/pan_image" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/bank_text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/_20DP"
+            android:fontFamily="@font/roboto_medium"
+            android:text="@string/_bank_details"
+            android:textColor="@color/dark_orange"
+            android:textSize="@dimen/_15SP"
+            app:layout_constraintBottom_toBottomOf="@id/bank_image"
+            app:layout_constraintStart_toEndOf="@id/bank_image"
+            app:layout_constraintTop_toTopOf="@id/bank_image" />
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/driving_image"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/_15DP"
+            android:src="@drawable/ic_final_dl"
+            app:layout_constraintStart_toStartOf="@id/with_the_original_aadhar"
+            app:layout_constraintTop_toBottomOf="@id/bank_image" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/driving_text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/_20DP"
+            android:fontFamily="@font/roboto_medium"
+            android:text="@string/driving_license"
+            android:textColor="@color/dark_orange"
+            android:textSize="@dimen/_15SP"
+            app:layout_constraintBottom_toBottomOf="@id/driving_image"
+            app:layout_constraintStart_toEndOf="@id/driving_image"
+            app:layout_constraintTop_toTopOf="@id/driving_image" />
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/dc_image"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/_20DP"
+            android:src="@drawable/dc_icon"
+            app:layout_constraintStart_toEndOf="@+id/with_the_original_aadhar"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/card_constraint"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/_27DP"
+            android:layout_marginTop="@dimen/_20DP"
+            android:layout_marginEnd="@dimen/_27DP"
+            android:layout_marginBottom="@dimen/_7DP"
+            android:padding="@dimen/_10DP"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/driving_image">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/first_constraint"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/_10DP"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent">
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/office_adress"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/roboto_regular"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/adress_kilometer"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="@dimen/_15DP"
+                    android:fontFamily="@font/roboto_regular"
+                    android:text="@string/navigate"
+                    android:textColor="@color/blue"
+                    app:layout_constraintBottom_toBottomOf="@id/direction_logo"
+                    app:layout_constraintEnd_toStartOf="@id/direction_logo"
+                    app:layout_constraintTop_toTopOf="@id/direction_logo"
+                    app:textAllCaps="true" />
+
+                <androidx.appcompat.widget.AppCompatImageView
+                    android:id="@+id/direction_logo"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="@dimen/_10DP"
+                    android:src="@drawable/ic_direction"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/office_adress" />
+
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+        </androidx.cardview.widget.CardView>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="webviewmodel"
+            type="com.ecomexpress.oneBoarding.ui.onBoard.viewmodel.WebViewModel" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_margin="@dimen/_5DP"
+        tools:context=".ui.onBoard.activity.WebViewActivity">
+
+        <WebView
+            android:id="@+id/webView"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            app:layout_editor_absoluteX="@dimen/_8DP"
+            app:layout_editor_absoluteY="@dimen/_8DP" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

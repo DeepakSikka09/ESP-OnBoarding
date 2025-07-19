@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@android:color/white"
+        tools:context=".ui.onBoard.activity.TermsAndConditionsActivity">
+
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_marginBottom="@dimen/_20DP"
+            app:layout_constraintBottom_toTopOf="@+id/bottom_ConstraintLayout"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <WebView
+                android:id="@+id/termsConditions_WebView"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/_5DP"
+                android:textSize="@dimen/_16SP"
+                app:fontFamily="@font/roboto_medium"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent" />
+        </ScrollView>
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/bottom_ConstraintLayout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent">
+
+            <androidx.appcompat.widget.AppCompatCheckBox
+                android:id="@+id/check_box"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/_20DP"
+                android:layout_marginEnd="@dimen/_10DP"
+                android:layout_marginBottom="@dimen/_20DP"
+                android:button="@drawable/customcheckbox"
+                android:gravity="center_vertical"
+                android:minWidth="0dp"
+                android:minHeight="0dp"
+                app:layout_constraintBottom_toTopOf="@+id/submit_AppCompatButton"
+                app:layout_constraintEnd_toStartOf="@+id/tv_no_pan"
+                app:layout_constraintStart_toStartOf="parent" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/tv_no_pan"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/_20DP"
+                android:fontFamily="@font/roboto_medium"
+                android:text="@string/i_accept_above_terms_conditions"
+                android:textAllCaps="true"
+                android:textColor="@color/light_blue"
+                android:textSize="@dimen/_15SP"
+                app:layout_constraintBottom_toBottomOf="@id/check_box"
+                app:layout_constraintStart_toEndOf="@id/check_box"
+                app:layout_constraintTop_toTopOf="@id/check_box" />
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/submit_AppCompatButton"
+                style="@style/custombutton"
+                android:layout_marginStart="@dimen/_20DP"
+                android:layout_marginEnd="@dimen/_20DP"
+                android:layout_marginBottom="@dimen/_30DP"
+                android:background="@drawable/disable_button"
+                android:enabled="false"
+                android:text="@string/submit"
+                android:textColor="@color/white"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

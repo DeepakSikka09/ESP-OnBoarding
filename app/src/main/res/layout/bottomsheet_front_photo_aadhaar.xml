@@ -1,0 +1,295 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data></data>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/cornerview"
+            tools:context=".activity.UploadAadhaarCardActivity">
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/back_photo"
+                style="@style/headingTop"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/_25DP"
+                android:layout_marginTop="@dimen/_24DP"
+                android:text="@string/_adhar_card_front_photo"
+                android:textColor="#404A5B"
+                android:textSize="@dimen/_18SP"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/upper_card"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_5DP"
+                android:layout_marginBottom="@dimen/_5DP"
+                android:background="@drawable/ic_rectangle_bg"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/back_photo">
+
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/cv_aadhar"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="@dimen/_20DP"
+                    android:backgroundTint="@color/background_card"
+                    app:cardCornerRadius="@dimen/_5DP"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent">
+
+
+                    <androidx.appcompat.widget.AppCompatImageView
+                        android:id="@+id/iv_aadharcard"
+                        android:layout_width="match_parent"
+                        android:layout_height="@dimen/_150DP"
+                        android:scaleType="fitXY"
+                        android:src="@drawable/front_aadhar"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <androidx.appcompat.widget.AppCompatImageView
+                        android:id="@+id/image_click"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:background="@drawable/camera_background"
+                        android:padding="@dimen/_15DP"
+                        android:src="@drawable/ic_camera" />
+
+
+                </androidx.cardview.widget.CardView>
+
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:id="@+id/cl_aadhaar_form"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/cv_aadhar">
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:id="@+id/tv_aadharcardnumber"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="@dimen/_20DP"
+                        android:fontFamily="@font/roboto_medium"
+                        android:text="@string/aadhar_card_number"
+                        android:textColor="@color/light_blue"
+                        android:textSize="@dimen/_15SP"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <com.google.android.material.textfield.TextInputLayout
+                        android:id="@+id/text_input_numer"
+                        style="@style/TextInputLayoutStyle"
+                        android:layout_marginStart="@dimen/_20DP"
+                        android:layout_marginTop="@dimen/_10DP"
+                        android:layout_marginEnd="@dimen/_20DP"
+                        android:theme="@style/TextInputStyle"
+                        app:boxStrokeWidth="@dimen/_1DP"
+                        app:boxStrokeWidthFocused="@dimen/_1DP"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/tv_aadharcardnumber">
+
+
+                        <com.google.android.material.textfield.TextInputEditText
+                            android:id="@+id/number"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:background="@color/transparent"
+                            android:fontFamily="@font/roboto_medium"
+                            android:inputType="number"
+                            android:maxLength="12"
+                            android:maxLines="1"
+                            android:paddingStart="0dp"
+                            android:paddingBottom="@dimen/_3DP"
+                            android:textColor="@color/black"
+                            android:textSize="@dimen/_15SP" />
+                    </com.google.android.material.textfield.TextInputLayout>
+
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:id="@+id/tv_fullname"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="@dimen/_20DP"
+                        android:fontFamily="@font/roboto_medium"
+                        android:text="@string/full_name"
+                        android:textColor="@color/light_blue"
+                        android:textSize="@dimen/_15SP"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/text_input_numer" />
+
+                    <com.google.android.material.textfield.TextInputLayout
+                        android:id="@+id/text_input_fullname"
+                        style="@style/TextInputLayoutStyle"
+                        android:layout_marginStart="@dimen/_20DP"
+                        android:layout_marginTop="@dimen/_10DP"
+                        android:layout_marginEnd="@dimen/_20DP"
+                        android:theme="@style/TextInputStyle"
+                        app:boxStrokeWidth="@dimen/_1DP"
+                        app:boxStrokeWidthFocused="@dimen/_1DP"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/tv_fullname">
+
+                        <com.google.android.material.textfield.TextInputEditText
+                            android:id="@+id/ed_fullname"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:background="@color/transparent"
+                            android:digits="abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ "
+                            android:fontFamily="@font/roboto_medium"
+                            android:inputType="text"
+                            android:maxLines="1"
+                            android:maxLength="150"
+                            android:paddingStart="0dp"
+                            android:paddingBottom="@dimen/_3DP"
+                            android:textColor="@color/black"
+                            android:textSize="@dimen/_15SP" />
+                    </com.google.android.material.textfield.TextInputLayout>
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:id="@+id/tv_dob"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="@dimen/_20DP"
+                        android:fontFamily="@font/roboto_medium"
+                        android:text="@string/date_of_birth"
+                        android:textColor="@color/light_blue"
+                        android:textSize="@dimen/_15SP"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/text_input_fullname" />
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:id="@+id/ed_dob"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="@dimen/_20DP"
+                        android:layout_marginTop="@dimen/_10DP"
+                        android:layout_marginEnd="@dimen/_20DP"
+                        android:backgroundTint="@color/light_grey_d9"
+                        android:drawableEnd="@drawable/baseline_calendar_month_24"
+                        android:fontFamily="@font/roboto_medium"
+                        android:padding="@dimen/_0DP"
+                        android:paddingEnd="@dimen/_10DP"
+                        android:paddingBottom="@dimen/_10DP"
+                        android:textColor="@color/Black_grey"
+                        android:textSize="@dimen/_15SP"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/tv_dob" />
+
+                    <View
+                        android:id="@+id/view1"
+                        android:layout_width="match_parent"
+                        android:layout_height="0.5dp"
+                        android:layout_marginStart="@dimen/_20DP"
+                        android:layout_marginTop="@dimen/_10DP"
+                        android:layout_marginEnd="@dimen/_20DP"
+                        android:background="@color/light_grey_d9"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/ed_dob" />
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:id="@+id/tv_gender"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="@dimen/_20DP"
+                        android:fontFamily="@font/roboto_medium"
+                        android:text="@string/gender"
+                        android:textColor="@color/light_blue"
+                        android:textSize="@dimen/_15SP"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/view1" />
+
+                    <androidx.appcompat.widget.AppCompatButton
+                        android:id="@+id/btn_male"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/_15DP"
+                        android:background="@drawable/bg_white"
+                        android:fontFamily="@font/roboto_medium"
+                        android:paddingHorizontal="@dimen/_15DP"
+                        android:paddingVertical="@dimen/_10DP"
+                        android:text="@string/male"
+                        android:textAllCaps="false"
+                        android:textColor="@color/light_blue"
+                        android:textSize="@dimen/_18SP"
+                        app:layout_constraintStart_toStartOf="@+id/tv_gender"
+                        app:layout_constraintTop_toBottomOf="@+id/tv_gender" />
+
+
+                    <androidx.appcompat.widget.AppCompatButton
+                        android:id="@+id/btn_female"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="@dimen/_10DP"
+                        android:layout_marginTop="@dimen/_15DP"
+                        android:background="@drawable/bg_white"
+                        android:fontFamily="@font/roboto_medium"
+                        android:paddingHorizontal="@dimen/_15DP"
+                        android:paddingVertical="@dimen/_10DP"
+                        android:text="@string/Female"
+                        android:textAllCaps="false"
+                        android:textColor="@color/light_blue"
+                        android:textSize="@dimen/_18SP"
+                        app:layout_constraintEnd_toStartOf="@+id/btn_transgender"
+                        app:layout_constraintStart_toEndOf="@id/btn_male"
+                        app:layout_constraintTop_toBottomOf="@+id/tv_gender" />
+
+                    <androidx.appcompat.widget.AppCompatButton
+                        android:id="@+id/btn_transgender"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="@dimen/_10DP"
+                        android:layout_marginTop="@dimen/_15DP"
+                        android:layout_marginEnd="@dimen/_20DP"
+                        android:background="@drawable/bg_white"
+                        android:fontFamily="@font/roboto_medium"
+                        android:paddingHorizontal="@dimen/_15DP"
+                        android:paddingVertical="@dimen/_10DP"
+                        android:text="@string/transgender"
+                        android:textAllCaps="false"
+                        android:textColor="@color/light_blue"
+                        android:textSize="@dimen/_18SP"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toEndOf="@+id/btn_female"
+                        app:layout_constraintTop_toBottomOf="@+id/tv_gender" />
+
+                    <androidx.appcompat.widget.AppCompatButton
+                        android:id="@+id/continue_AppCompatButton"
+                        style="@style/custombutton"
+                        android:layout_marginStart="@dimen/_20DP"
+                        android:layout_marginTop="@dimen/_20DP"
+                        android:layout_marginEnd="@dimen/_20DP"
+                        android:layout_marginBottom="@dimen/_20DP"
+                        android:background="@drawable/disable_button"
+                        android:enabled="false"
+                        android:text="@string/_continue"
+                        android:textColor="@color/grey_A3"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@id/btn_male" />
+                </androidx.constraintlayout.widget.ConstraintLayout>
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </ScrollView>
+
+
+</layout>

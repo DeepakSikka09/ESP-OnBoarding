@@ -1,0 +1,230 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="OTPVerify"
+            type="com.ecomexpress.oneBoarding.ui.onBoard.viewmodel.OTPVerifyViewModel" />
+
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".ui.onBoard.activity.OTPVerifyActivity">
+
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@color/light_grey_ec">
+
+
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/ic_back_arrow"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_25DP"
+                android:layout_marginStart="@dimen/_20DP"
+                android:padding="@dimen/_10DP"
+                android:src="@drawable/ic_back_arrow"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/iv_profile_icon"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/_10DP"
+                android:layout_marginTop="@dimen/_15DP"
+                android:src="@drawable/otp_icon"
+                app:layout_constraintStart_toStartOf="@+id/ic_back_arrow"
+                app:layout_constraintTop_toBottomOf="@+id/ic_back_arrow" />
+
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/tv_sign_up"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/_15DP"
+                android:fontFamily="@font/roboto_medium"
+                android:padding="@dimen/_5DP"
+                android:text="@string/otp_verification"
+                android:textColor="@color/black_b1"
+                android:textSize="@dimen/_24SP"
+                app:layout_constraintBottom_toBottomOf="@+id/iv_profile_icon"
+                app:layout_constraintStart_toEndOf="@+id/iv_profile_icon"
+                app:layout_constraintTop_toTopOf="@+id/iv_profile_icon" />
+
+            <androidx.constraintlayout.widget.Guideline
+                android:id="@+id/guideline"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                app:layout_constraintGuide_percent=".2" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/tv_resend_otp_statement"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/_20DP"
+                android:fontFamily="@font/roboto_bold"
+                android:text="@string/resend_otp_statement"
+                android:textColor="@color/grey_7F"
+                android:textSize="@dimen/_16SP"
+                app:layout_constraintTop_toBottomOf="@id/guideline" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/tv_resend_otp_via_sms"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/_20DP"
+                android:fontFamily="@font/roboto_bold"
+                android:text="@string/resend_otp_via_sms"
+                android:textColor="@color/grey_7F"
+                android:textSize="@dimen/_16SP"
+                app:layout_constraintTop_toBottomOf="@id/tv_resend_otp_statement" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/tv_resend"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/_30DP"
+                android:fontFamily="@font/roboto_regular"
+                android:text="@string/resend_otp"
+                android:textColor="@color/blue"
+                android:visibility="gone"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/otp_btn" />
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/constrnt_otp"
+                android:layout_width="@dimen/_0DP"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_30DP"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/tv_resend_otp_via_sms">
+                <androidx.appcompat.widget.AppCompatEditText
+                    android:id="@+id/m_hidden_Edit_text"
+                    android:layout_width="@dimen/_2DP"
+                    android:layout_height="@dimen/_2DP"
+                    android:layout_gravity="center_horizontal"
+                    android:background="@null"
+                    android:cursorVisible="false"
+                    android:gravity="center_horizontal"
+                    android:inputType="number"
+                    android:maxLength="4"
+                    android:textColor="#00000000"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <androidx.appcompat.widget.AppCompatEditText
+                    android:id="@+id/ed_1"
+                    android:layout_width="@dimen/_50DP"
+                    android:layout_height="@dimen/_50DP"
+                    android:background="@drawable/curved_rectangle_otp"
+                    android:cursorVisible="false"
+                    android:gravity="center"
+                    android:inputType="number"
+                    android:maxLength="1"
+                    android:maxLines="1"
+                    app:layout_constraintEnd_toStartOf="@id/ed_2"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <androidx.appcompat.widget.AppCompatEditText
+                    android:id="@+id/ed_2"
+                    android:layout_width="@dimen/_50DP"
+                    android:layout_height="@dimen/_50DP"
+                    android:background="@drawable/curved_rectangle_otp"
+                    android:cursorVisible="false"
+                    android:gravity="center"
+                    android:inputType="number"
+                    android:maxLength="1"
+                    android:maxLines="1"
+                    app:layout_constraintEnd_toStartOf="@id/ed_3"
+                    app:layout_constraintStart_toEndOf="@id/ed_1"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <androidx.appcompat.widget.AppCompatEditText
+                    android:id="@+id/ed_3"
+                    android:layout_width="@dimen/_50DP"
+                    android:layout_height="@dimen/_50DP"
+                    android:background="@drawable/curved_rectangle_otp"
+                    android:cursorVisible="false"
+                    android:gravity="center"
+                    android:inputType="number"
+                    android:maxLength="1"
+                    android:maxLines="1"
+                    app:layout_constraintEnd_toStartOf="@id/ed_4"
+                    app:layout_constraintStart_toEndOf="@id/ed_2"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <androidx.appcompat.widget.AppCompatEditText
+                    android:id="@+id/ed_4"
+                    android:layout_width="@dimen/_50DP"
+                    android:layout_height="@dimen/_50DP"
+                    android:background="@drawable/curved_rectangle_otp"
+                    android:cursorVisible="false"
+                    android:gravity="center"
+                    android:inputType="number"
+                    android:maxLength="1"
+                    android:maxLines="1"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toEndOf="@id/ed_3"
+                    app:layout_constraintTop_toTopOf="parent" />
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/otpMessage_AppCompatTextView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_10DP"
+                android:drawablePadding="@dimen/_5DP"
+                android:fontFamily="@font/roboto_medium"
+                android:gravity="start|center"
+                android:text="@string/auto_fetching_otp"
+                android:textColor="@color/grey_7F"
+                app:layout_constraintStart_toStartOf="@+id/constrnt_otp"
+                app:layout_constraintEnd_toEndOf="@+id/constrnt_otp"
+                app:layout_constraintTop_toBottomOf="@id/constrnt_otp" />
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/otp_btn"
+                style="@style/custombutton"
+                android:layout_marginHorizontal="@dimen/_25DP"
+                android:layout_marginTop="@dimen/_45DP"
+                android:background="@drawable/disable_button"
+                android:enabled="false"
+                android:fontFamily="@font/roboto_regular"
+                android:text="@string/verify_otp"
+                android:textSize="@dimen/_21SP"
+                android:textColor="@color/grey_A3"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/otpMessage_AppCompatTextView" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/tv_version"
+                style="@style/textView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/_16SP"
+                android:textColor="@color/grey_7F"
+                android:textSize="@dimen/_12SP"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent" />
+
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+        <variable
+            name="uploaddocumentsviewModel"
+            type="com.ecomexpress.oneBoarding.ui.onBoard.viewmodel.UploadDocumentsViewModel" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/curved_rectangle_with_two_side">
+
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/main_constraint"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/_20DP"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/pan_card"
+                android:layout_width="match_parent"
+                android:layout_height="220dp"
+                android:layout_marginStart="@dimen/_20DP"
+                android:layout_marginEnd="@dimen/_20DP"
+                android:background="@color/faff"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintTop_toTopOf="parent">
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/enter_pan_card_number"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/_30DP"
+                    android:layout_marginTop="@dimen/_30DP"
+                    android:layout_marginEnd="@dimen/_116DP"
+                    android:text="@string/enter_pan_card_number"
+                    android:textColor="@color/light_blue"
+                    android:textSize="@dimen/_14SP"
+                    app:fontFamily="@font/roboto_medium"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:textAllCaps="true" />
+
+                <com.google.android.material.textfield.TextInputLayout
+                    android:id="@+id/txt_input_pan"
+                    style="@style/TextInputLayoutStyle"
+                    android:layout_marginStart="@dimen/_30DP"
+                    android:layout_marginTop="@dimen/_15DP"
+                    android:layout_marginEnd="@dimen/_30DP"
+                    android:theme="@style/TextInputStyle"
+                    app:boxStrokeWidth="@dimen/_1DP"
+                    app:boxStrokeWidthFocused="@dimen/_1DP"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/enter_pan_card_number">
+
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/ed_pan_no"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="@color/transparent"
+                        android:digits="ABCDEFGHIJKLMNOPQRSTUVWXYZ1234567890"
+                        android:fontFamily="@font/roboto_medium"
+                        android:hint="@string/pan_card"
+                        android:inputType="textCapCharacters"
+                        android:maxLength="10"
+                        android:paddingStart="0dp"
+                        android:paddingBottom="@dimen/_3DP" />
+                </com.google.android.material.textfield.TextInputLayout>
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/btn_continue"
+            style="@style/custombutton"
+            android:layout_marginStart="@dimen/_30DP"
+            android:layout_marginTop="@dimen/_44DP"
+            android:layout_marginEnd="@dimen/_30DP"
+            android:layout_marginBottom="@dimen/_20DP"
+            android:background="@drawable/disable_button"
+            android:enabled="false"
+            android:text="@string/verify"
+            android:textColor="@color/grey_A3"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/main_constraint" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

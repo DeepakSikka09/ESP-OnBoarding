@@ -1,0 +1,173 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/imageView2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/_24DP"
+            android:src="@drawable/success_status"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/document_submitted"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/_17DP"
+            android:text="@string/documents_submitted"
+            android:textColor="@color/green"
+            android:textSize="@dimen/_15SP"
+            app:fontFamily="@font/roboto_medium"
+            app:layout_constraintBottom_toBottomOf="@id/imageView2"
+            app:layout_constraintStart_toEndOf="@id/imageView2"
+            app:layout_constraintTop_toTopOf="@id/imageView2" />
+
+        <View
+            android:id="@+id/first_view"
+            android:layout_width="@dimen/_2DP"
+            android:layout_height="@dimen/_20DP"
+            android:background="@color/grey_c3"
+            app:layout_constraintEnd_toEndOf="@id/imageView2"
+            app:layout_constraintStart_toStartOf="@id/imageView2"
+            app:layout_constraintTop_toBottomOf="@id/imageView2" />
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/imageView4"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/_24DP"
+            android:src="@drawable/pending_icon"
+            app:layout_constraintBottom_toTopOf="@+id/second_view"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/first_view" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/dc_status"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/_17DP"
+            android:text="@string/onboarding_center_approval"
+            android:textColor="@color/blue"
+            android:textSize="@dimen/_15SP"
+            app:fontFamily="@font/roboto_medium"
+            app:layout_constraintBottom_toBottomOf="@id/imageView4"
+            app:layout_constraintStart_toEndOf="@id/imageView4"
+            app:layout_constraintTop_toTopOf="@id/imageView4" />
+
+        <ScrollView
+            android:id="@+id/status_sv"
+            android:layout_width="@dimen/_0DP"
+            android:layout_height="@dimen/_0DP"
+            android:layout_marginEnd="@dimen/_20DP"
+            android:fadeScrollbars="false"
+            android:fillViewport="true"
+            app:layout_constraintBottom_toBottomOf="@id/second_view"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="@+id/dc_status"
+            app:layout_constraintTop_toBottomOf="@id/dc_status">
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/dc_reason"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_2DP"
+                android:text="@string/it_will_take_up_to_48_hrs"
+                android:textColor="@color/black_5B"
+                android:textSize="@dimen/_13SP"
+                app:fontFamily="@font/roboto_regular" />
+        </ScrollView>
+
+        <View
+            android:id="@+id/second_view"
+            android:layout_width="@dimen/_2DP"
+            android:layout_height="@dimen/_0DP"
+            android:background="@color/grey_c3"
+            app:layout_constraintBottom_toBottomOf="@id/status_sv"
+            app:layout_constraintEnd_toEndOf="@id/imageView4"
+            app:layout_constraintHeight_max="@dimen/_60DP"
+            app:layout_constraintHeight_min="@dimen/_30DP"
+            app:layout_constraintStart_toStartOf="@id/imageView4"
+            app:layout_constraintTop_toBottomOf="@id/imageView4" />
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/imageView5"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/_24DP"
+            android:src="@drawable/notstarted_status"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/second_view" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/hr_status"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/_17DP"
+            android:text="@string/hr_approval"
+            android:textColor="@color/grey_A3"
+            android:textSize="@dimen/_15SP"
+            app:fontFamily="@font/roboto_medium"
+            app:layout_constraintBottom_toBottomOf="@id/imageView5"
+            app:layout_constraintStart_toEndOf="@id/imageView5"
+            app:layout_constraintTop_toTopOf="@id/imageView5" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/hr_status_reason"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/_17DP"
+            android:layout_marginTop="@dimen/_5DP"
+            android:text="@string/it_will_take_up_to_48_hrs"
+            android:textColor="@color/red_4B"
+            android:textSize="@dimen/_13SP"
+            android:visibility="gone"
+            app:fontFamily="@font/roboto_regular"
+            app:layout_constraintStart_toEndOf="@id/imageView5"
+            app:layout_constraintTop_toBottomOf="@+id/hr_status" />
+
+        <View
+            android:id="@+id/third_view"
+            android:layout_width="@dimen/_2DP"
+            android:layout_height="@dimen/_20DP"
+            android:background="@color/grey_c3"
+            android:visibility="visible"
+            app:layout_constraintEnd_toEndOf="@id/imageView5"
+            app:layout_constraintStart_toStartOf="@id/imageView5"
+            app:layout_constraintTop_toBottomOf="@id/imageView5" />
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/imageView6"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/_24DP"
+            android:src="@drawable/notstarted_status"
+            android:visibility="visible"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/third_view" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/terms_status"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/_17DP"
+            android:text="@string/terms_conditions"
+            android:textColor="@color/grey_A3"
+            android:textSize="@dimen/_15SP"
+            android:visibility="visible"
+            app:fontFamily="@font/roboto_medium"
+            app:layout_constraintBottom_toBottomOf="@id/imageView6"
+            app:layout_constraintStart_toEndOf="@id/imageView6"
+            app:layout_constraintTop_toTopOf="@id/imageView6" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

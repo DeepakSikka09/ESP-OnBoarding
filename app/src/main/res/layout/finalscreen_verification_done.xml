@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/final_verification"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/iv_verification_done"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:foregroundGravity="center"
+            android:src="@drawable/ic_round_tick"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/tv_verification_done"
+            style="@style/headingTop"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/_12DP"
+            android:gravity="center"
+            android:text="@string/congratulations_welcome_to_ecom_express"
+            android:textSize="@dimen/_18SP"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/iv_verification_done" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/tv_download_app"
+            style="@style/subheading"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/_44DP"
+            android:layout_marginTop="@dimen/_30DP"
+            android:layout_marginEnd="@dimen/_44DP"
+            android:gravity="center"
+            android:text="@string/start_earning_by_downloading_the_ecom_sathi_app"
+            android:textColor="@color/light_blue"
+            android:textSize="@dimen/_15SP"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/tv_verification_done"
+            app:layout_goneMarginTop="@dimen/_30DP" />
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/btn_sruti"
+            android:layout_width="@dimen/_0DP"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/_20DP"
+            android:layout_marginTop="@dimen/_10DP"
+            android:layout_marginEnd="@dimen/_10DP"
+            android:background="@drawable/button"
+            android:drawableStart="@drawable/ic_download"
+            android:drawablePadding="@dimen/_10DP"
+            android:fontFamily="@font/roboto_bold"
+            android:gravity="start|center"
+            android:padding="@dimen/_10DP"
+            android:text="@string/download_sruti_app"
+            android:textAllCaps="false"
+            android:textColor="@color/white"
+            android:textSize="@dimen/_18SP"
+            app:layout_constraintEnd_toStartOf="@id/btn_sathi"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tv_download_app" />
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/btn_sathi"
+            android:layout_width="@dimen/_0DP"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/_10DP"
+            android:layout_marginTop="@dimen/_10DP"
+            android:layout_marginEnd="@dimen/_20DP"
+            android:background="@drawable/button"
+            android:drawableStart="@drawable/ic_download"
+            android:drawablePadding="@dimen/_10DP"
+            android:fontFamily="@font/roboto_bold"
+            android:gravity="start|center"
+            android:padding="@dimen/_10DP"
+            android:text="@string/download_sathi_app"
+            android:textAllCaps="false"
+            android:textColor="@color/white"
+            android:textSize="@dimen/_18SP"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@id/btn_sruti"
+            app:layout_constraintTop_toBottomOf="@+id/tv_download_app" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

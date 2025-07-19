@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="@dimen/_0DP"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/_15DP"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/cornerBorder"
+                android:layout_width="@dimen/_15DP"
+                android:layout_height="0dp"
+                android:scaleType="fitXY"
+                android:src="@drawable/alert_dialog_corner"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="@dimen/_0DP"
+                android:layout_height="wrap_content"
+                android:background="@drawable/image_not_valid_dialog"
+                android:backgroundTint="@color/pink_ED"
+                android:padding="@dimen/_10DP"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@id/cornerBorder"
+                app:layout_constraintTop_toTopOf="parent">
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/tv_title"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/roboto_bold"
+                    app:layout_constraintEnd_toStartOf="@id/iv_cancel"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    android:textColor="@color/black_b1"
+                    android:textSize="@dimen/_18SP"
+                    android:textStyle="bold"
+                    android:textAlignment="center"
+                    android:layout_marginEnd="@dimen/_5DP"
+                    android:text="@string/aadhaar_pan_link_title"/>
+
+                <androidx.appcompat.widget.AppCompatImageView
+                    android:id="@+id/iv_cancel"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/_0DP"
+                    android:scaleType="centerInside"
+                    android:src="@drawable/cancel_status"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/tv_desc"
+                    android:layout_width="@dimen/_0DP"
+                    android:layout_marginTop="@dimen/_10DP"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/_20DP"
+                    android:layout_marginEnd="@dimen/_5DP"
+                    android:gravity="center"
+                    android:text="@string/tnc_pan_link_text"
+                    android:textColor="@color/black_b1"
+                    android:textSize="@dimen/_16SP"
+                    app:layout_constraintEnd_toStartOf="@id/iv_cancel"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/tv_title" />
+
+                <androidx.appcompat.widget.AppCompatButton
+                    android:id="@+id/btn_confirm"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/button_sky"
+                    android:fontFamily="@font/roboto_regular"
+                    android:gravity="center"
+                    android:layout_marginTop="@dimen/_10DP"
+                    android:paddingStart="@dimen/_10DP"
+                    android:paddingEnd="@dimen/_10DP"
+                    android:text="Continue"
+                    android:textAllCaps="false"
+                    android:textColor="@color/blue_93"
+                    android:textSize="@dimen/_20SP"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/tv_desc" />
+            </androidx.constraintlayout.widget.ConstraintLayout>
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

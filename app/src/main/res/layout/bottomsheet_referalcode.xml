@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/curved_rectangle_with_two_side">
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/referal_code_tv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/_24DP"
+            android:layout_marginTop="@dimen/_40DP"
+            android:text="@string/do_you_have_a_referral_code"
+            android:textColor="@color/black_b1"
+            android:textSize="@dimen/_18SP"
+            app:fontFamily="@font/roboto_bold"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/enter_referal_code"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/_43DP"
+            android:text="@string/enter_referral_code"
+            android:textColor="@color/blue_93"
+            android:textSize="@dimen/_16SP"
+            app:fontFamily="@font/roboto_medium"
+            app:layout_constraintStart_toStartOf="@id/referal_code_tv"
+            app:layout_constraintTop_toBottomOf="@id/referal_code_tv" />
+
+        <androidx.appcompat.widget.AppCompatEditText
+            android:id="@+id/enter_referal_no"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/_24DP"
+            android:layout_marginTop="@dimen/_10DP"
+            android:layout_marginEnd="@dimen/_25DP"
+            android:backgroundTint="@color/light_grey_d9"
+            android:fontFamily="@font/roboto_medium"
+            android:inputType="text"
+            android:maxLines="1"
+            android:maxLength="60"
+            android:textSize="@dimen/_18SP"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/enter_referal_code" />
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/verifyButton"
+            android:layout_width="@dimen/_0DP"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/_10DP"
+            android:layout_marginTop="@dimen/_35DP"
+            android:layout_marginEnd="@dimen/_10DP"
+            android:layout_marginBottom="@dimen/_20DP"
+            android:background="@drawable/button"
+            android:fontFamily="@font/roboto_regular"
+            android:text="@string/verify"
+            android:textAllCaps="false"
+            android:textColor="@color/white"
+            android:textSize="@dimen/_21SP"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/enter_referal_no" />
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/skipButton"
+            android:layout_width="@dimen/_0DP"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/_10DP"
+            android:layout_marginTop="@dimen/_20DP"
+            android:layout_marginEnd="@dimen/_10DP"
+            android:layout_marginBottom="@dimen/_20DP"
+            android:background="@drawable/btn_disable_curved_rectangle_four_side"
+            android:backgroundTint="@color/white"
+            android:fontFamily="@font/roboto_regular"
+            android:text="@string/skip_for_now"
+            android:textAllCaps="false"
+            android:textColor="#4979B7"
+            android:textSize="@dimen/_21SP"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/verifyButton" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

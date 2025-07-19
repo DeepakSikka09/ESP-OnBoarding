@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="chooseLanguage"
+            type="com.ecomexpress.oneBoarding.ui.onBoard.viewmodel.ChooseLanguageViewModel" />
+
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".ui.onBoard.activity.ChooseLanguageActivity">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/recycler_cl"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/_0DP"
+            android:background="@color/light_grey_ec"
+            app:layout_constraintBottom_toTopOf="@+id/button_ConstraintLayout"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/tv_select_language"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/_15DP"
+                android:fontFamily="@font/roboto_medium"
+                android:text="@string/select_language"
+                android:textColor="@color/black_b1"
+                android:textSize="@dimen/_24SP"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/recyclerChooseLang"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/_0DP"
+                android:layout_margin="@dimen/_5DP"
+                android:background="@android:color/transparent"
+                android:clipToPadding="false"
+                app:layout_constrainedHeight="true"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/tv_select_language" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/button_ConstraintLayout"
+            android:layout_width="@dimen/_0DP"
+            android:layout_height="wrap_content"
+            app:cardBackgroundColor="@color/light_grey_ec"
+            app:cardElevation="@dimen/_0DP"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="@+id/recycler_cl"
+            app:layout_constraintStart_toStartOf="@+id/recycler_cl">
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/btn_select"
+                style="@style/custombutton"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginVertical="@dimen/_10DP"
+                android:background="@drawable/disable_button"
+                android:text="@string/select_language"
+                android:textColor="@color/white"
+                android:textSize="@dimen/_21SP"
+                android:layout_marginHorizontal="@dimen/_13DP"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+        </androidx.cardview.widget.CardView>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

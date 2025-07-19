@@ -1,0 +1,209 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="onboardLocation"
+            type="com.ecomexpress.oneBoarding.ui.onBoard.viewmodel.OnBoardLocationViewModel" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".activity.OnBoardLocationActivity">
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/guideline"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/_1DP"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintGuide_percent=".45"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/top_ConstraintLayout"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/_220DP"
+            android:background="@drawable/ic_curve_rectangle"
+            app:layout_constraintBottom_toTopOf="@+id/guideline"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <include
+            android:id="@+id/common_bg"
+            layout="@layout/header_layout" />
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/card"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/_0DP"
+            android:layout_marginTop="@dimen/_30DP"
+            android:background="@drawable/curved_rectangle_with_two_side"
+            android:elevation="@dimen/_5DP"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/common_bg">
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/onboard_location"
+                style="@style/headingTop"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/_20DP"
+                android:layout_marginTop="@dimen/_20DP"
+                android:text="@string/preferred_work_location"
+                app:layout_constraintBottom_toTopOf="@id/location_write"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                tools:ignore="HardcodedText" />
+
+            <androidx.appcompat.widget.AppCompatEditText
+                android:id="@+id/location_write"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/_20DP"
+                android:layout_marginTop="@dimen/_20DP"
+                android:layout_marginEnd="@dimen/_20DP"
+                android:background="@color/transparent"
+                android:backgroundTint="@color/light_grey_d9"
+                android:fontFamily="@font/roboto_regular"
+                android:hint="@string/enter_pin_code"
+                android:inputType="number"
+                android:maxLength="6"
+                android:maxLines="1"
+                android:padding="@dimen/_5DP"
+                android:textSize="@dimen/_18SP"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/onboard_location" />
+
+            <View
+                android:id="@+id/divider"
+                android:layout_width="@dimen/_0DP"
+                android:layout_height="@dimen/_1DP"
+                android:layout_marginTop="@dimen/_5DP"
+                android:background="@color/grey_BC"
+                app:layout_constraintEnd_toEndOf="@id/location_write"
+                app:layout_constraintStart_toStartOf="@id/location_write"
+                app:layout_constraintTop_toBottomOf="@id/location_write" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/near_by_location"
+                style="@style/subheading"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/_20DP"
+                android:gravity="center_vertical"
+                android:text="@string/near_by_locations"
+                android:textColor="@color/light_blue_1"
+                android:textSize="@dimen/_14SP"
+                app:layout_constraintBottom_toBottomOf="@id/location_btn"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="@+id/location_btn"
+
+                app:textAllCaps="true" />
+
+            <androidx.appcompat.widget.AppCompatEditText
+                android:id="@+id/search"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:layout_marginEnd="@dimen/_2DP"
+                android:background="@color/transparent"
+                android:backgroundTint="@color/light_grey_d9"
+                android:hint="@string/search"
+                android:visibility="gone"
+                app:layout_constraintEnd_toStartOf="@id/close_search"
+                app:layout_constraintStart_toStartOf="@+id/location_write"
+                app:layout_constraintTop_toBottomOf="@id/location_btn" />
+
+            <View
+                android:id="@+id/search_divider"
+                android:layout_width="@dimen/_0DP"
+                android:layout_height="@dimen/_1DP"
+                android:layout_marginTop="@dimen/_5DP"
+                android:background="@color/grey_BC"
+                android:visibility="gone"
+                app:layout_constraintEnd_toEndOf="@id/close_search"
+                app:layout_constraintStart_toStartOf="@id/search"
+                app:layout_constraintTop_toBottomOf="@id/search" />
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/close_search"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@drawable/ic_close_bg"
+                android:src="@drawable/baseline_close_24"
+                android:visibility="gone"
+                app:layout_constraintBottom_toBottomOf="@id/search"
+                app:layout_constraintEnd_toEndOf="@id/location_write"
+                app:layout_constraintTop_toTopOf="@id/search" />
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/location_btn"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:background="@drawable/ic_close_bg"
+                android:padding="@dimen/_5DP"
+                android:src="@drawable/ic_location_search"
+                app:layout_constraintEnd_toEndOf="@id/location_write"
+                app:layout_constraintTop_toBottomOf="@id/location_write" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/tv_no_location"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/roboto_medium"
+                android:text="@string/no_location_found"
+                android:textAlignment="center"
+                android:visibility="gone"
+                app:layout_constraintBottom_toTopOf="@+id/continue_AppCompatButton"
+                app:layout_constraintTop_toBottomOf="@id/search" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/tv_incorrect_pincode"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/roboto_medium"
+                android:text="@string/pin_code_incorrect"
+                android:textAlignment="center"
+                android:visibility="gone"
+                app:layout_constraintBottom_toTopOf="@+id/continue_AppCompatButton"
+                app:layout_constraintTop_toBottomOf="@id/search" />
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/recycler_address"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/_0DP"
+                android:layout_margin="@dimen/_10DP"
+                android:layout_marginTop="@dimen/_10DP"
+                android:backgroundTint="@color/blue_FF"
+                android:orientation="vertical"
+                app:layout_constraintBottom_toTopOf="@+id/continue_AppCompatButton"
+                app:layout_constraintTop_toBottomOf="@id/search" />
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/continue_AppCompatButton"
+                style="@style/custombutton"
+                android:layout_width="@dimen/_0DP"
+                android:layout_marginTop="@dimen/_20DP"
+                android:layout_marginBottom="@dimen/_20DP"
+                android:background="@drawable/disable_button"
+                android:enabled="false"
+                android:text="@string/_continue"
+                android:textColor="@color/grey_A3"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="@id/recycler_address"
+                app:layout_constraintStart_toStartOf="@id/recycler_address" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

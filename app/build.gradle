@@ -1,0 +1,139 @@
+plugins {
+    id 'com.android.application'
+    id 'org.jetbrains.kotlin.android'
+    id 'kotlin-android'
+    id 'kotlin-kapt'
+    id 'dagger.hilt.android.plugin'
+    id 'com.google.gms.google-services'
+    id 'com.google.firebase.crashlytics'
+}
+
+
+android {
+
+    signingConfigs {
+
+        release {
+            storeFile file('/home/tusharrajput/sd2-espv2/app/EcomSathi.jks')
+            storePassword 'ecom@android'
+            keyAlias 'key'
+            keyPassword 'ecom@android'
+        }
+    }
+    namespace 'com.ecomexpress.oneBoarding'
+    compileSdk 34
+    defaultConfig {
+        applicationId "com.ecomexpress.oneBoarding"
+        minSdk 23
+        targetSdk 34
+        versionCode 12
+        versionName "1.11"
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+        signingConfig signingConfigs.release
+    }
+    buildTypes {
+        debug {
+            minifyEnabled false
+            debuggable true
+            // buildConfigField("String", "BASE_URL", "\"https://onboarding-uat.ecomexpress.in\"")
+            // buildConfigField("String", "BASE_URL", "\"https://onboarding-reg.ecomexpress.in\"")
+            //  buildConfigField("String", "BASE_URL", "\"https://sathiv2-test.ecomexpress.in\"")
+            buildConfigField("String", "BASE_URL", "\"https://onboarding.ecomexpress.in\"")
+        }
+        release {
+            minifyEnabled false
+            debuggable false
+//            buildConfigField("String", "BASE_URL", "\"https://onboarding-uat.ecomexpress.in\"")
+            //      buildConfigField("String", "BASE_URL", "\"https://onboarding-reg.ecomexpress.in\"")
+//            buildConfigField("String", "BASE_URL", "\"https://sathiv2-test.ecomexpress.in\"")
+            buildConfigField("String", "BASE_URL", "\"https://onboarding.ecomexpress.in\"")
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+            signingConfig signingConfigs.release
+        }
+    }
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_17
+        targetCompatibility JavaVersion.VERSION_17
+    }
+    kotlinOptions {
+        jvmTarget = '17'
+    }
+    packagingOptions {
+        exclude 'META-INF/atomicfu.kotlin_module'
+    }
+    dataBinding {
+        enabled = true
+    }
+    buildFeatures {
+        buildConfig = true
+    }
+
+}
+
+dependencies {
+    implementation 'androidx.core:core-ktx:1.10.0'
+    implementation 'androidx.appcompat:appcompat:1.6.1'
+    implementation 'com.google.android.material:material:1.8.0'
+    implementation 'androidx.constraintlayout:constraintlayout:2.1.4'
+
+    /**---------------------DataStore(SharedPreference)----------------------------------------**/
+    implementation "androidx.datastore:datastore-preferences:1.0.0"
+    implementation "androidx.datastore:datastore-core:1.0.0"
+
+    /**-------------------------Jetpack Components---(RoomDatabase)---------------------------------**/
+    implementation "androidx.room:room-runtime:2.5.0"
+    implementation "androidx.room:room-ktx:2.5.0"
+    implementation 'androidx.activity:activity:1.9.3'
+
+    kapt "androidx.room:room-compiler:2.5.0"
+
+    /**---------------------Networking----------------------------------------**/
+    implementation "com.squareup.okhttp3:logging-interceptor:4.9.1"
+    implementation "com.squareup.okhttp3:okhttp:4.9.2"
+    implementation "com.squareup.retrofit2:retrofit:2.9.0"
+    implementation "com.squareup.retrofit2:converter-gson:2.9.0"
+
+    /**-------------------------Jetpack Components--(Hilt)----------------------------------**/
+    implementation "com.google.dagger:hilt-android:2.42"
+    kapt "com.google.dagger:hilt-android-compiler:2.42"
+
+    /**-------------------data binding------------------------------------------**/
+    implementation "androidx.databinding:databinding-runtime:7.4.2"
+
+    /**--------------------Camera X------------------------------------------**/
+    implementation "androidx.camera:camera-core:1.2.1"
+    implementation "androidx.camera:camera-camera2:1.2.1"
+    implementation "androidx.camera:camera-lifecycle:1.2.1"
+    implementation "androidx.camera:camera-view:1.2.1"
+    implementation "androidx.concurrent:concurrent-futures-ktx:1.1.0"
+    implementation "androidx.lifecycle:lifecycle-runtime-ktx:2.6.0"
+    implementation "com.google.android.gms:play-services-mlkit-barcode-scanning:18.1.0"
+    implementation 'com.google.android.gms:play-services-location:21.0.1'
+
+    /**********Firebase platform *********************/
+    implementation 'com.google.firebase:firebase-crashlytics-ktx:18.3.5'
+    implementation 'com.google.firebase:firebase-analytics-ktx:21.2.0'
+
+    //firebase messaging
+    implementation 'com.google.firebase:firebase-messaging:23.0.3'
+
+
+    //Glide
+    implementation 'com.github.bumptech.glide:glide:4.14.2'
+    annotationProcessor 'com.github.bumptech.glide:compiler:4.14.2'
+
+    implementation "androidx.lifecycle:lifecycle-viewmodel-ktx:2.6.0"
+
+    // auto picker OTP SMS
+    implementation 'com.google.android.gms:play-services-auth:17.0.0'
+    implementation 'com.google.android.gms:play-services-auth-api-phone:17.4.0'
+
+    //image cropper
+    implementation 'com.github.alirezaafkar:Android-Image-Cropper:2.3.3'
+
+    implementation 'com.google.android.play:app-update:2.1.0'
+    implementation 'com.google.android.play:app-update-ktx:2.1.0'
+}
+
+// HashKey--> ri9ZzU37ZfH (SignIn Release apk hashKey from playstore)
+// HashKey--> cHrnykfE+/S (Local Release )
